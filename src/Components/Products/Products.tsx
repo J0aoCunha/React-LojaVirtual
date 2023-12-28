@@ -1,27 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { ContainerSection } from './style.ts'
 import { featProducts } from '../../Api/FeacthProducts.ts'
-import ProductCard from '../ProductCard/ProductCard.tsx'
 import { Container } from '../../Global.ts'
+import { appContext } from '../../context/AppContext.ts'
+import ProductCard from '../ProductCard/ProductCard.tsx'
 import Loader from '../Loader/Loader.tsx'
 
-interface Product {
-  id: number
-  thumbnail: string
-  title: string
-  price: number
-}
-
 function Products() {
-  const [load, setLoad] = useState(true)
-  const [products, setProducts] = useState<Product[]>([])
+  type AppContextType = {
+    products: Array<{
+      id: string
+      title: string
+      price: number
+      thumbnail: string
+    }>
+    setProducts: React.Dispatch<React.SetStateAction<[]>>
+    load: boolean
+    setLoad: React.Dispatch<React.SetStateAction<boolean>>
+  }
 
+  const { products, setProducts, load, setLoad } =
+    useContext<AppContextType>(appContext)
   useEffect(() => {
     featProducts('iphone').then((response) => {
       setProducts(response)
       setLoad(false)
     })
-  }, [])
+  }, [setProducts])
 
   return (
     (load && <Loader />) || (
@@ -30,9 +35,9 @@ function Products() {
           {products.map((product) => (
             <ProductCard
               key={product.id}
-              thumbnail={product.thumbnail}
               title={product.title}
               price={product.price}
+              thumbnail={product.thumbnail}
             />
           ))}
         </ContainerSection>
