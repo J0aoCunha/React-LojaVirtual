@@ -7,6 +7,6 @@ export const ContainerSection = styled.section`
   padding: 120px 20px 50px;
 
   display: grid;
-  grid-template-columns: repeat(4, 350px);
+  grid-template-columns: repeat(4, 300px);
   gap: 20px;
 `

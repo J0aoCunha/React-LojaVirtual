@@ -1,6 +1,7 @@
 import { ShoppingCart } from '@phosphor-icons/react'
 import { DivInfos, SectionProduct } from './style.ts'
 import { formateCurrency } from '../../utils/FormateCurrency.ts'
+import ReplaceLetter from '../../utils/ReplaceLetter.ts'
 
 interface ProductCardProps {
   price: number
@@ -11,7 +12,7 @@ interface ProductCardProps {
 function ProductCard(props: ProductCardProps) {
   return (
     <SectionProduct>
-      <img src={props.thumbnail.replace(/\w\.jpg/gi, 'W.jpg')} alt="" />
+      <img src={ReplaceLetter(props.thumbnail)} />
       <DivInfos>
         <h2>{formateCurrency(props.price)}</h2>
         <h3>{props.title}</h3>

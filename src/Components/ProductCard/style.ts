@@ -44,7 +44,7 @@ export const SectionProduct = styled.section`
 `
 export const DivInfos = styled.div`
   padding: 20px;
-  border: 1px solid #ddd;
+  border-top: 1px solid #ddd;
 
   h2 {
     font-size: 30px;
