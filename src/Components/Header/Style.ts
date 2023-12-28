@@ -5,6 +5,7 @@ export const HeaderContainer = styled.header`
   width: 100%;
   position: fixed;
   display: flex;
+  z-index: 1;
 
   div {
     padding: 20px;
