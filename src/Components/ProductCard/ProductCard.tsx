@@ -12,7 +12,7 @@ interface ProductCardProps {
 function ProductCard(props: ProductCardProps) {
   return (
     <SectionProduct>
-      <img src={ReplaceLetter(props.thumbnail)} />
+      <img src={ReplaceLetter(props.thumbnail)} alt={props.title} />
       <DivInfos>
         <h2>{formateCurrency(props.price)}</h2>
         <h3>{props.title}</h3>

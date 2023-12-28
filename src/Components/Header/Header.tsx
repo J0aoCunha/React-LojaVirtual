@@ -1,7 +1,8 @@
 import CartButton from '../CartButton/CartButton'
 import SearchBar from '../SearchBar/SearchBar'
 
-import { Container, HeaderContainer } from './Style'
+import { HeaderContainer } from './Style'
+import { Container } from '../../Global.ts'
 
 function Header() {
   return (

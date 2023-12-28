@@ -14,8 +14,3 @@ export const HeaderContainer = styled.header`
     display: flex;
   }
 `
-
-export const Container = styled.div`
-  width: 80%;
-  margin: 0 auto;
-`

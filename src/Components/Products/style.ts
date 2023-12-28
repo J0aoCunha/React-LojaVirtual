@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 
 export const ContainerSection = styled.section`
-  width: 80%;
-  margin: 0 auto;
-
   padding: 120px 20px 50px;
 
   display: grid;
-  grid-template-columns: repeat(4, 300px);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-content: center;
+
   gap: 20px;
 `

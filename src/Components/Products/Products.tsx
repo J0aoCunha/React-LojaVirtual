@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { ContainerSection } from './style.ts'
 import { featProducts } from '../../Api/FeacthProducts.ts'
 import ProductCard from '../ProductCard/ProductCard.tsx'
+import { Container } from '../../Global.ts'
 
 interface Product {
   id: number
@@ -20,16 +21,18 @@ function Products() {
   }, [])
 
   return (
-    <ContainerSection>
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          thumbnail={product.thumbnail}
-          title={product.title}
-          price={product.price}
-        />
-      ))}
-    </ContainerSection>
+    <Container>
+      <ContainerSection>
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            thumbnail={product.thumbnail}
+            title={product.title}
+            price={product.price}
+          />
+        ))}
+      </ContainerSection>
+    </Container>
   )
 }
 

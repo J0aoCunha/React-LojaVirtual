@@ -29,8 +29,8 @@ export const SectionProduct = styled.section`
     justify-content: center;
     border: none;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.8);
-    font-size: 1.5;
+    background: rgba(230, 230, 247, 0.6);
+    font-size: 1.5rem;
     cursor: pointer;
   }
 
