@@ -24,7 +24,7 @@ function Products() {
     useContext<AppContextType>(appContext)
 
   useEffect(() => {
-    featProducts('iphone').then((response) => {
+    featProducts('aleatorio').then((response) => {
       setProducts(response)
       setLoad(false)
     })
