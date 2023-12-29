@@ -13,7 +13,15 @@ interface Product {
 function Provider(props: propsProvider) {
   const [products, setProducts] = useState<Product[]>([])
   const [load, setLoad] = useState(true)
-  const value = { products, setProducts, load, setLoad }
+  const [cartItens, setCartItens] = useState([])
+  const value = {
+    products,
+    setProducts,
+    load,
+    setLoad,
+    cartItens,
+    setCartItens,
+  }
   return (
     <appContext.Provider value={value}>{props.children}</appContext.Provider>
   )
