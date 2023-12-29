@@ -11,6 +11,7 @@ export const ButtonContainer = styled.button`
   position: relative;
   margin-left: 20px;
   color: #333;
+  cursor: pointer;
 
   span {
     position: absolute;

@@ -10,6 +10,10 @@ export const SectionCartItem = styled.section`
   img {
     width: 70px;
   }
+
+  &:last-child {
+    border-bottom: none;
+  }
 `
 
 export const DivInfosItem = styled.div`

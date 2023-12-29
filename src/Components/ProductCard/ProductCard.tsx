@@ -12,19 +12,20 @@ interface ProductCardProps {
   id: string
 }
 type AppContextType = {
-  cartItens: Array<{
+  cartItems: Array<{
     id: string
     title: string
     price: number
     thumbnail: string
   }>
-  setCartItens: React.Dispatch<React.SetStateAction<[]>>
+  setCartItems: React.Dispatch<React.SetStateAction<[]>>
 }
 function ProductCard(props: ProductCardProps) {
-  const { price, title, thumbnail } = props
+  const { price, title, thumbnail, id } = props
 
-  const { cartItens, setCartItens } = useContext<AppContextType>(appContext)
+  const { cartItems, setCartItems } = useContext<AppContextType>(appContext)
   const newItem = {
+    id,
     title,
     price,
     thumbnail,
@@ -39,7 +40,7 @@ function ProductCard(props: ProductCardProps) {
       <button
         type="button"
         onClick={() => {
-          setCartItens([...cartItens, newItem])
+          setCartItems([...cartItems, newItem])
         }}
       >
         <ShoppingCart />

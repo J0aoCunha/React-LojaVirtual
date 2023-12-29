@@ -1,16 +1,13 @@
 import styled from 'styled-components'
 
-export const SectionCart = styled.section`
-  width: 100%;
-  max-width: 330px;
-  background: white;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 100px 20px 20px;
+export const DivItens = styled.div`
+  flex-grow: 1;
+  overflow: auto;
 `
 
-export const DivItens = styled.div``
-
-export const DivResume = styled.div``
+export const DivResume = styled.div`
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 35px 0 15px;
+  border-top: 1px solid #ddd;
+`

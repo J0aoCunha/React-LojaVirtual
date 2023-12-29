@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react'
+import uuid from 'react-uuid'
 import { ContainerSection } from './style.ts'
 import { featProducts } from '../../Api/FeacthProducts.ts'
 import { Container } from '../../Global.ts'
@@ -21,12 +22,13 @@ function Products() {
 
   const { products, setProducts, load, setLoad } =
     useContext<AppContextType>(appContext)
+
   useEffect(() => {
     featProducts('iphone').then((response) => {
       setProducts(response)
       setLoad(false)
     })
-  }, [setProducts])
+  }, [])
 
   return (
     (load && <Loader />) || (
@@ -35,7 +37,7 @@ function Products() {
           {products.map((product) => (
             <ProductCard
               id={product.id}
-              key={product.id}
+              key={uuid()}
               title={product.title}
               price={product.price}
               thumbnail={product.thumbnail}
